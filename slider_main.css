@@ -1,0 +1,46 @@
+html {
+  background: black;
+  display: block;
+  padding: 0;
+}
+
+body {
+    /* to visualise element
+    border: 1px blue dashed; */
+}
+
+
+.imgContainer {
+  margin: 10px auto;
+  width: 600px;
+  height: 400px;
+  background-color: grey;
+}
+
+img {
+  width: 600px;
+  height: 400px;
+  z-index: 10;
+}
+
+.button {
+  top: 30%;
+  width: 10%;
+  height: 100%;
+  border: 1px #2d2d2d solid;
+  background-color: #c1c1c1;
+  font-size: 2em;
+
+
+}
+
+
+#next {
+  float: right;
+}
+
+
+@font-face {
+  font-family: "EB_Garamond";
+  src: url(https://fonts.googleapis.com/css?family=EB+Garamond);
+}
