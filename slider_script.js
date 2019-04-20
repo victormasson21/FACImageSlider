@@ -1,8 +1,15 @@
-var someElement = document.querySelector('someElement'); // element like 'form' 'div' 'p' ...
-var someID = document.getElementById('someID'); // ID you set yourself with ID = //
+var currentImage = document.getElementById('currentImage');
+
+var prev = document.getElementById('prev');
+var next = document.getElementById('next');
 
 
-
-var button = document.querySelector('button');
-var left = document.getElementById('left');
-var right = document.getElementById('right');
+var i=1;
+function swapImage() {
+  i++
+  var newSrc = 'imgfolder/img' + i + '.png'
+  currentImage.setAttribute('src', newSrc);
+  if (i==5) {i=0}
+}
+prev.addEventListener('click', swapImage);
+next.addEventListener('click', swapImage);
