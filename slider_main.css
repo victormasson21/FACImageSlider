@@ -9,26 +9,32 @@ body {
 }
 
 
-.imgContainer {
+.sliderContainer { /* TO DO: rename without camelCase */
   margin: auto;
+  position: relative;  /* to clip image when it bleeds out container */
+  overflow: hidden;   /* to clip image when it bleeds out container */
   width: 600px;
   height: 400px;
-  background-color: pink;
+  background-color: pink; /* WIP help only - for visualisation */
+}
+
+#imgContainer { /* TO DO: rename without camelCase */
+  margin-left: 0px;
+  transition: margin-left 0.3s linear 0s;
 }
 
 img {
-  position: absolute;
-  margin-top: 0px;
-  opacity: 0.8;
+  position: absolute; /* overlaying buttons on the image */
+  opacity: 0.7;
   width: 600px;
   height: 400px;
 }
 
-.button {
+button {
   width: 10%;
-  height: 100%;
-  background-color: white;
-  opacity: 0.7;
+  height: 30%;
+  background-color: green;
+  opacity: 0.4;
   font-size: 2em;
 
 }
