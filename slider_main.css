@@ -56,12 +56,12 @@ body {
   overflow-x: hidden;
   width: 90vw;
   height: 60vw;
+  position: relative;
 }
 
 #imgContainer { /* TO DO: rename without camelCase */
   display: flex;
   margin-left: 0px;
-  transition: margin-left 0.3s linear 0s;
 }
 
 #currentImage {
@@ -90,20 +90,31 @@ img {
 }
 
 #next, #prev {
-  position: fixed;
-  width: 10%;
-  height: 30%;
-  background-color: green;
-  opacity: 0.4;
-  font-size: 2em;
-
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1.5em;
+  opacity: 0.2;
+  transition: opacity 1s;
+  padding: 30px;
 }
-
 
 #next {
-  right: 20px;
+  right: 0px;
+  text-align: right;
 }
 
+#prev:hover, #next:hover {
+  opacity: 0.8;
+}
+
+#prev:focus, #next:focus {
+  outline:0; /* avoids blue shadow when clicking on button */
+}
 
 @font-face {
   font-family: "NanumMyeongjo Regular";
