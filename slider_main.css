@@ -8,14 +8,54 @@ body {
     border: 1px blue dashed; */
 }
 
+/* Top row: Title + Autoplay button */
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  width: 90vw;
+  height: inherit;
+  font-family: "NanumMyeongjo Regular", sans-serif;
+
+}
+
+.sliderTitle {
+  top: 0px;
+  margin: 10px;
+
+}
+
+#buttonOn {
+  float: right;
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  border-radius: 40px;
+  border: none;
+  background-color: #f2f2f2;
+  text-align: center;
+  font-size: 1.2em;
+  padding-top: 2px;
+  padding-left: 10px;
+  outline: 0;
+  cursor: pointer;
+  transition: background-color 0.3s linear;
+}
+
+#buttonOn:hover {
+  background-color: #c4c4c4;
+}
+
+/* Image slider */
 
 .sliderContainer { /* TO DO: rename without camelCase */
   display: flex;
   margin: auto;
-  overflow-x: hidden;   /* to clip image when it bleeds out container */
+  overflow-x: hidden;
   width: 90vw;
   height: 60vw;
-  background-color: pink; /* WIP help only - for visualisation */
 }
 
 #imgContainer { /* TO DO: rename without camelCase */
@@ -30,8 +70,6 @@ body {
 
 img {
   width: 100%;
-  height: 60vw;
-  opacity: 0.7;
 }
 
 @media (min-width: 700px) {
@@ -44,10 +82,14 @@ img {
     width: 700px;
     height: 100%;
   }
+  
+  .topRow {
+    width: 700px;
+  }
 
 }
 
-button {
+#next, #prev {
   position: fixed;
   width: 10%;
   height: 30%;
@@ -64,6 +106,15 @@ button {
 
 
 @font-face {
-  font-family: "EB_Garamond";
-  src: url(https://fonts.googleapis.com/css?family=EB+Garamond);
+  font-family: "NanumMyeongjo Regular";
+  src: url(fonts/NanumMyeongjo-Regular.ttf);
 }
+
+@font-face {
+  font-family: "NanumMyeongjo ExtraBold";
+  src: url(fonts/NanumMyeongjo-ExtraBold.ttf);
+}
+
+@font-face {
+  font-family: "NanumMyeongjo Bold";
+  src: url(fonts/NanumMyeongjo-Bold.ttf);
