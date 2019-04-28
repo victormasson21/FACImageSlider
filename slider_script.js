@@ -9,18 +9,36 @@ for (let i = 2; i <= 5; i++) {
   imgContainer.appendChild(newImage);
   var newSrc = 'imgfolder/img' + i + '.png';
   newImage.setAttribute('src', newSrc);
-  newImage.setAttribute('style', 'margin-left:' + (i - 1) * 600 + 'px');
 }
 
 /* Adjusts the left margin of the image container to display various images */
-var j = 1;
+var j = 0;
 var newMargin = 0;
 function slideRight() {
-  newMargin = -(600 * j);
-  imgContainer.setAttribute('style', 'margin-left:' + newMargin + 'px');
   j += 1;
   if (j == 5) {j = 0}
+  newMargin = -(sliderContainer.offsetWidth * j);
+  imgContainer.setAttribute('style', 'margin-left:' + newMargin + 'px');
 }
+
+function slideLeft() {
+  j -= 1;
+  if (j < 0) {j = 4}
+  newMargin = -(sliderContainer.offsetWidth * j);
+  currentImage.setAttribute('style', 'margin-left:' + newMargin + 'px');
+  print()
+}
+
+window.addEventListener('keyup', function(e) {
+  if (e.key == 'ArrowRight') {slideRight()}
+  if (e.key == 'ArrowLeft') {slideLeft()}
+})
 
 prev.addEventListener('click', slideRight);
 next.addEventListener('click', slideRight);
+
+/* Adjusts margin when resizing */
+window.addEventListener('resize', function() {
+  newMargin = -(sliderContainer.offsetWidth * j);
+  currentImage.setAttribute('style', 'margin-left:' + newMargin + 'px');
+})
